@@ -1,0 +1,23 @@
+{
+  "name": "use-device-breakpoints",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablohpsilva/use-device-breakpoints.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablohpsilva/use-device-breakpoints/issues"
+  },
+  "homepage": "https://github.com/pablohpsilva/use-device-breakpoints#readme",
+  "dependencies": {
+    "@w11r/use-breakpoint": "^1.7.0"
+  }
+}
