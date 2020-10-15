@@ -8,7 +8,7 @@ export enum Devices {
   SYMBIAN = "SYMBIAN",
 }
 
-export enum iPhoneTypes {
+export enum AppleDevices {
   iPhone4 = 480,
   iPhoneSE = 568,
   iPhone8 = 667,
@@ -17,7 +17,7 @@ export enum iPhoneTypes {
   iPhoneMax = 896,
 }
 
-export enum SamsungTypes {
+export enum SamsungDevices {
   GalaxyS3 = "Galaxy S III",
   GalaxyS4 = "Galaxy S4",
   GalaxyS5 = "Galaxy S5",
@@ -34,16 +34,16 @@ export enum Browsers {
   DBrowser = "dbrowser",
   Dolphin = "Dolphin",
   Firefox = "Firefox",
-  IE = "Internet Explorer",
+  InternetExplorer = "Internet Explorer",
   Isivioo = "Isivioo",
   MIUI = "MIUI Browser",
   Mercury = "Mercury",
-  Mobile = "Mobile Safari",
-  Mobile = "Mobile Silk",
   Opera = "Opera",
   Safari = "Safari",
+  SafariMobile = "Mobile Safari",
   Samsung = "Samsung Browser",
   Silk = "Silk",
+  SilkMobile = "Mobile Silk",
   UC = "UC Browser",
   Yandex = "Yandex Browser",
 }
