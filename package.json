@@ -2,9 +2,16 @@
   "name": "use-device-breakpoints",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "mhy sb-start",
+    "build": "mhy bb --mhy-env=prod:skipJSX",
+    "watch": "npm run build -- --watch",
+    "test": "npm run config && mhy eslint",
+    "config": "mhy config typescript -io && mhy config webpack eslint prettier -io",
+    "install-peers": "npm i && mhy dep install peer",
+    "prerelease": "npm run config && mhy prettier && mhy eslint --fix",
+    "release": "mhy sv"
   },
   "repository": {
     "type": "git",
@@ -18,6 +25,7 @@
   },
   "homepage": "https://github.com/pablohpsilva/use-device-breakpoints#readme",
   "dependencies": {
-    "@w11r/use-breakpoint": "^1.7.0"
+    "@w11r/use-breakpoint": "^1.7.0",
+    "bowser": "^2.11.0"
   }
 }
