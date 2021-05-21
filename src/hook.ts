@@ -1,11 +1,22 @@
-import { useMemo } from 'react'
+import { useContext, useMemo } from 'react'
 import useBreakpoint from '@w11r/use-breakpoint'
 
+import { Context } from './provider'
 import { UseBreakpoint } from './types'
 
-const Bowser = require('bowser/bundled')
-
 export interface UserDeviceBreakpoints extends UseBreakpoint {
+    value?: any,
+    satisfies?: boolean,
+    isSafari: boolean,
+    isChrome: boolean,
+    isInternetExplorer: boolean,
+    isIE: boolean,
+    isOpera: boolean,
+    isFirefox: boolean,
+    isIOS: boolean,
+    isAndroid: boolean,
+    isMacOS: boolean,
+    isWindows: boolean,
     browser: {
         name: string
         version: string
@@ -17,6 +28,7 @@ export interface UserDeviceBreakpoints extends UseBreakpoint {
     os: {
         name: string
         version: string
+        versionName: string
     }
     platform: {
         type: string
@@ -25,16 +37,30 @@ export interface UserDeviceBreakpoints extends UseBreakpoint {
     }
 }
 
-export const useDeviceBreakpoints = (): UserDeviceBreakpoints => {
-    const breakpointsChanges = useBreakpoint()
-    const browser = Bowser.parse(window.navigator.userAgent)
+export const useDeviceBreakpoints = (defaultValue?: any, breakpointPossibleValues?: any[], satisfies?: {[key:string]:any}): UserDeviceBreakpoints => {
+    const { userAgent, browser, browserParser, ...helpers } = useContext(Context)
+    // @ts-ignore
+    const breakpointValues = useBreakpoint(defaultValue, breakpointPossibleValues)
 
     const deviceBreakpointsValue: UserDeviceBreakpoints = useMemo(() => {
-        return {
-            ...breakpointsChanges,
-            ...browser
+        let resultValue = typeof breakpointValues !== 'string' ? {
+                ...breakpointValues,
+            } : {value: breakpointValues}
+        
+        if(satisfies) {
+            resultValue = {...resultValue, satisfies: browserParser.satisfies(satisfies) ?? false}
         }
-    }, [breakpointsChanges])
+
+
+        return {
+            ...browser,
+            ...resultValue,
+            ...helpers,
+            userAgent,
+        }
+    }, [breakpointValues])
 
     return deviceBreakpointsValue
 }
+
+export default useDeviceBreakpoints
