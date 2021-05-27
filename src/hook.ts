@@ -7,6 +7,7 @@ import { UseBreakpoint } from './types'
 export interface UserDeviceBreakpoints extends UseBreakpoint {
     value?: any,
     satisfies?: boolean,
+    userAgent: string,
     isSafari: boolean,
     isChrome: boolean,
     isInternetExplorer: boolean,
@@ -47,7 +48,7 @@ export const useDeviceBreakpoints = (defaultValue?: any, breakpointPossibleValue
                 ...breakpointValues,
             } : {value: breakpointValues}
         
-        if(satisfies) {
+        if (satisfies) {
             resultValue = {...resultValue, satisfies: browserParser.satisfies(satisfies) ?? false}
         }
 
@@ -58,7 +59,7 @@ export const useDeviceBreakpoints = (defaultValue?: any, breakpointPossibleValue
             ...helpers,
             userAgent,
         }
-    }, [breakpointValues])
+    }, [breakpointValues, userAgent])
 
     return deviceBreakpointsValue
 }

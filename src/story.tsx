@@ -14,7 +14,7 @@ const Component = () => {
       ["medium", "is medium"],
       ["large", "is large"],
     ],
-    {}
+    { macos: { chrome: ">80" } }
   );
 
   console.log(value);
