@@ -148,80 +148,83 @@ It'll return the following object with the basic setup.
     isIPhone: boolean
     isIPad: boolean
     isIPod: boolean
+    isBlackberry: boolean
+    isYandexBrowser: boolean
+    isChromium: boolean
     browser: {
         name: string
         version: string
-    },
+    }
     engine: {
         name: string
         version: string
-    },
+    }
     os: {
         name: string
         version: string
         versionName: string
-    },
+    }
     platform: {
         type: string
         vendor: string
         model: string
-    },
-    isLandscape: boolean,
-    isPortrait: boolean,
-    isHDPI: boolean,
-    isMicro: boolean,
-    isMobile: boolean,
-    isTablet: boolean,
-    isSmall: boolean,
-    isMedium: boolean,
-    isLarge: boolean,
-    'is-Micro': boolean,
-    'is|Micro': boolean,
-    'isMicro+': boolean,
-    'is-Micro+': boolean,
-    'is|Micro+': boolean,
-    'isMicro-': boolean,
-    'is-Micro-': boolean,
-    'is|Micro-': boolean,
-    'is-Mobile': boolean,
-    'is|Mobile': boolean,
-    'isMobile+': boolean,
-    'is-Mobile+': boolean,
-    'is|Mobile+': boolean,
-    'isMobile-': boolean,
-    'is-Mobile-': boolean,
-    'is|Mobile-': boolean,
-    'is-Tablet': boolean,
-    'is|Tablet': boolean,
-    'isTablet+': boolean,
-    'is-Tablet+': boolean,
-    'is|Tablet+': boolean,
-    'isTablet-': boolean,
-    'is-Tablet-': boolean,
-    'is|Tablet-': boolean,
-    'is-Small': boolean,
-    'is|Small': boolean,
-    'isSmall+': boolean,
-    'is-Small+': boolean,
-    'is|Small+': boolean,
-    'isSmall-': boolean,
-    'is-Small-': boolean,
-    'is|Small-': boolean,
-    'is-Medium': boolean,
-    'is|Medium': boolean,
-    'isMedium+': boolean,
-    'is-Medium+': boolean,
-    'is|Medium+': boolean,
-    'isMedium-': boolean,
-    'is-Medium-': boolean,
-    'is|Medium-': boolean,
-    'is-Large': boolean,
-    'is|Large': boolean,
-    'isLarge+': boolean,
-    'is-Large+': boolean,
-    'is|Large+': boolean,
-    'isLarge-': boolean,
-    'is-Large-': boolean,
+    }
+    isLandscape: boolean
+    isPortrait: boolean
+    isHDPI: boolean
+    isMicro: boolean
+    isMobile: boolean
+    isTablet: boolean
+    isSmall: boolean
+    isMedium: boolean
+    isLarge: boolean
+    'is-Micro': boolean
+    'is|Micro': boolean
+    'isMicro+': boolean
+    'is-Micro+': boolean
+    'is|Micro+': boolean
+    'isMicro-': boolean
+    'is-Micro-': boolean
+    'is|Micro-': boolean
+    'is-Mobile': boolean
+    'is|Mobile': boolean
+    'isMobile+': boolean
+    'is-Mobile+': boolean
+    'is|Mobile+': boolean
+    'isMobile-': boolean
+    'is-Mobile-': boolean
+    'is|Mobile-': boolean
+    'is-Tablet': boolean
+    'is|Tablet': boolean
+    'isTablet+': boolean
+    'is-Tablet+': boolean
+    'is|Tablet+': boolean
+    'isTablet-': boolean
+    'is-Tablet-': boolean
+    'is|Tablet-': boolean
+    'is-Small': boolean
+    'is|Small': boolean
+    'isSmall+': boolean
+    'is-Small+': boolean
+    'is|Small+': boolean
+    'isSmall-': boolean
+    'is-Small-': boolean
+    'is|Small-': boolean
+    'is-Medium': boolean
+    'is|Medium': boolean
+    'isMedium+': boolean
+    'is-Medium+': boolean
+    'is|Medium+': boolean
+    'isMedium-': boolean
+    'is-Medium-': boolean
+    'is|Medium-': boolean
+    'is-Large': boolean
+    'is|Large': boolean
+    'isLarge+': boolean
+    'is-Large+': boolean
+    'is|Large+': boolean
+    'isLarge-': boolean
+    'is-Large-': boolean
     'is|Large-': boolean
 }
 ```

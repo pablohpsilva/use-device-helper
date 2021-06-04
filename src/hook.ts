@@ -25,6 +25,9 @@ export interface UserDeviceHelper extends UseBreakpoint {
     isIPhone: boolean
     isIPad: boolean
     isIPod: boolean
+    isBlackberry: boolean
+    isYandexBrowser: boolean
+    isChromium: boolean
     browser: {
         name: string
         version: string

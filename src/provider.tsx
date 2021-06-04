@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import React, { createContext, useState } from 'react'
 import { BreakpointProvider, useResize } from '@w11r/use-breakpoint'
 
@@ -30,16 +31,18 @@ const browserParserFunc = () => {
     const isFirefox = browserParser.satisfies({ firefox: '>1' }) ?? false
     const isKonqueror = browserParser.satisfies({ konqueror: '>1' }) ?? false
     const isLynx = browserParser.satisfies({ lynx: '>1' }) ?? false
-    const isSamsungBrowser = browserParser.satisfies({ samsung: '>1' }) ?? false
+    const isSamsungBrowser = browserParser.satisfies({ samsungBrowser: '>1' }) ?? false
     const isIOS = browser?.os?.name?.toLowerCase() === 'ios'
     const isAndroid = browser?.os?.name?.toLowerCase() === 'android'
     const isMacOS = browser?.os?.name?.toLowerCase() === 'macos'
-    const isWindows = browser?.os?.name?.toLowerCase() === 'windows'
-    const isWindowsPhone =
-        browser?.platform?.type?.toLowerCase() === 'mobile' && browser?.os?.name?.toLowerCase().includes('windows')
+    const isWindows = browser?.os?.name?.toLowerCase().includes('windows')
+    const isWindowsPhone = isWindows && browser?.platform?.type?.toLowerCase() === 'mobile'
     const isIPhone = isIOS && browser?.platform?.model?.toLowerCase() === 'iphone'
     const isIPad = isIOS && browser?.platform?.model?.toLowerCase() === 'ipad'
     const isIPod = isIOS && browser?.platform?.model?.toLowerCase() === 'ipod'
+    const isBlackberry = browserParser.satisfies({ blackberry: '>1' }) ?? false
+    const isYandexBrowser = browserParser.satisfies({ yandexbrowser: '>1' }) ?? false
+    const isChromium = browserParser.satisfies({ chromium: '>1' }) ?? false
 
     const defaultState = {
         userAgent: getWindow().navigator.userAgent,
@@ -61,7 +64,10 @@ const browserParserFunc = () => {
         isLynx,
         isIPhone,
         isIPad,
-        isIPod
+        isIPod,
+        isBlackberry,
+        isYandexBrowser,
+        isChromium
     }
 
     return defaultState

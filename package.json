@@ -10,7 +10,7 @@
         "test": "npm run config && mhy eslint",
         "config": "mhy config typescript -io && mhy config webpack eslint prettier -io",
         "install-peers": "npm i && mhy dep install peer",
-        "prerelease": "npm run config && mhy prettier && mhy eslint --fix",
+        "prerelease": "npm run config && mhy prettier && mhy eslint --fix && npm run build",
         "release": "mhy sv"
     },
     "repository": {
