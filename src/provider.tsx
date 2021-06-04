@@ -67,12 +67,12 @@ const browserParserFunc = () => {
     return defaultState
 }
 
-export const defaultState = browserParserFunc()
+export const deviceBreakpointDefaultState = browserParserFunc()
 
-export const Context = createContext(defaultState)
+export const deviceBreakpointContext = createContext(deviceBreakpointDefaultState)
 
 export const DeviceHelperProvider = ({ children }) => {
-    const [values, setValues] = useState(defaultState)
+    const [values, setValues] = useState(deviceBreakpointDefaultState)
 
     useResize(() => {
         const { userAgent } = getWindow().navigator
@@ -84,9 +84,9 @@ export const DeviceHelperProvider = ({ children }) => {
     })
 
     return (
-        <Context.Provider value={values}>
+        <deviceBreakpointContext.Provider value={values}>
             <BreakpointProvider>{children}</BreakpointProvider>
-        </Context.Provider>
+        </deviceBreakpointContext.Provider>
     )
 }
 

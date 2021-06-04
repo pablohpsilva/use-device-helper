@@ -1,7 +1,7 @@
 import { useContext, useMemo } from 'react'
 import useBreakpoint from '@w11r/use-breakpoint'
 
-import { Context } from './provider'
+import { deviceBreakpointContext } from './provider'
 import { UseBreakpoint } from './types'
 
 export interface UserDeviceHelper extends UseBreakpoint {
@@ -50,7 +50,7 @@ export const useDeviceHelper = (
     breakpointPossibleValues?: any[],
     satisfies?: { [key: string]: any }
 ): UserDeviceHelper => {
-    const { userAgent, browser, browserParser, ...helpers } = useContext(Context)
+    const { userAgent, browser, browserParser, ...helpers } = useContext(deviceBreakpointContext)
     // @ts-ignore
     const breakpointValues = useBreakpoint(defaultValue, breakpointPossibleValues)
 
