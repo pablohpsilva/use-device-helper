@@ -19,6 +19,12 @@ TBA
 npm i use-device-helper
 ```
 
+or
+
+```bash
+yarn add use-device-helper
+```
+
 # Setup
 
 ## Add provider
