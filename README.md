@@ -59,7 +59,7 @@ const { isMobile, isSafari, isMacOS, isWindows } = useDeviceHelper()
 Component example
 
 ```jsx
-import useDeviceHelper from 'use-device-helper'
+import { useDeviceHelper } from 'use-device-helper'
 
 const MyCmp = () => {
     const columns = useDeviceHelper([1, 2], ['mobile', [2, 1]])
@@ -76,7 +76,7 @@ const MyCmp = () => {
 Satisfies Component example
 
 ```jsx
-import useDeviceHelper from 'use-device-helper'
+import { useDeviceHelper } from 'use-device-helper'
 
 const MyCmp = () => {
     const { value: columns, satisfies } = useDeviceHelper([1, 2], ['mobile', [2, 1]], {
