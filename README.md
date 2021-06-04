@@ -135,6 +135,13 @@ It'll return the following object with the basic setup.
     isAndroid: boolean
     isMacOS: boolean
     isWindows: boolean
+    isWindowsPhone: boolean
+    isSamsungBrowser: boolean
+    isKonqueror: boolean
+    isLynx: boolean
+    isIPhone: boolean
+    isIPad: boolean
+    isIPod: boolean
     browser: {
         name: string
         version: string
