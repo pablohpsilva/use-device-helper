@@ -4,20 +4,20 @@ import useBreakpoint from '@w11r/use-breakpoint'
 import { Context } from './provider'
 import { UseBreakpoint } from './types'
 
-export interface UserDeviceBreakpoints extends UseBreakpoint {
-    value?: any,
-    satisfies?: boolean,
-    userAgent: string,
-    isSafari: boolean,
-    isChrome: boolean,
-    isInternetExplorer: boolean,
-    isIE: boolean,
-    isOpera: boolean,
-    isFirefox: boolean,
-    isIOS: boolean,
-    isAndroid: boolean,
-    isMacOS: boolean,
-    isWindows: boolean,
+export interface UserDeviceHelper extends UseBreakpoint {
+    value?: any
+    satisfies?: boolean
+    userAgent: string
+    isSafari: boolean
+    isChrome: boolean
+    isInternetExplorer: boolean
+    isIE: boolean
+    isOpera: boolean
+    isFirefox: boolean
+    isIOS: boolean
+    isAndroid: boolean
+    isMacOS: boolean
+    isWindows: boolean
     browser: {
         name: string
         version: string
@@ -38,30 +38,36 @@ export interface UserDeviceBreakpoints extends UseBreakpoint {
     }
 }
 
-export const useDeviceBreakpoints = (defaultValue?: any, breakpointPossibleValues?: any[], satisfies?: {[key:string]:any}): UserDeviceBreakpoints => {
+export const useDeviceHelper = (
+    defaultValue?: any,
+    breakpointPossibleValues?: any[],
+    satisfies?: { [key: string]: any }
+): UserDeviceHelper => {
     const { userAgent, browser, browserParser, ...helpers } = useContext(Context)
     // @ts-ignore
     const breakpointValues = useBreakpoint(defaultValue, breakpointPossibleValues)
 
-    const deviceBreakpointsValue: UserDeviceBreakpoints = useMemo(() => {
-        let resultValue = typeof breakpointValues !== 'string' ? {
-                ...breakpointValues,
-            } : {value: breakpointValues}
-        
-        if (satisfies) {
-            resultValue = {...resultValue, satisfies: browserParser.satisfies(satisfies) ?? false}
-        }
+    const deviceBreakpointsValue: UserDeviceHelper = useMemo(() => {
+        let resultValue =
+            typeof breakpointValues !== 'string'
+                ? {
+                      ...breakpointValues
+                  }
+                : { value: breakpointValues }
 
+        if (satisfies) {
+            resultValue = { ...resultValue, satisfies: browserParser.satisfies(satisfies) ?? false }
+        }
 
         return {
             ...browser,
             ...resultValue,
             ...helpers,
-            userAgent,
+            userAgent
         }
     }, [breakpointValues, userAgent])
 
     return deviceBreakpointsValue
 }
 
-export default useDeviceBreakpoints
+export default useDeviceHelper
