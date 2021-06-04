@@ -49,7 +49,7 @@ to read how to override the default breakpoint settings.
 # Usage
 
 ```js
-const { isMobile, isSafari, isMacOS, isWindows } = useDeviceHelper()
+const { isMobile, isSafari, isChrome, isMacOS, isWindows, isIPad, isIPhone } = useDeviceHelper()
 ```
 
 > You can also access the values with suffix and prefix, but you need
